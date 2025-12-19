@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gal / Diiwaangasho | Somali Marketplace</title>
+    <title>Login | Somali Marketplace</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -17,36 +17,36 @@
     <section class="auth-container">
         <div class="container">
             <div class="auth-tabs">
-                <button class="auth-tab active" data-tab="login">Gal</button>
-                <button class="auth-tab" data-tab="register">Diiwaangasho</button>
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="register">Register</button>
             </div>
             
             <!-- Login Form -->
             <div class="auth-form active" id="login-form">
-                <h2>Gali Akoonkaaga</h2>
+                <h2>Login to Your Account</h2>
                 
                 <div class="social-login">
                     <button class="social-btn facebook">
-                        <i class="fab fa-facebook"></i> Ku Gal Facebook
+                        <i class="fab fa-facebook"></i> Login with Facebook
                     </button>
                     <button class="social-btn google">
-                        <i class="fab fa-google"></i> Ku Gal Google
+                        <i class="fab fa-google"></i> Login with Google
                     </button>
                 </div>
                 
                 <div class="divider">
-                    <span>Ama</span>
+                    <span>Or</span>
                 </div>
                 
                 <form id="loginForm">
                     <div class="form-group">
-                        <label for="login-email">Email ama Mobile</label>
-                        <input type="text" id="login-email" placeholder="geli email-kaaga ama telefoonka" required>
+                        <label for="login-email">Email or Phone</label>
+                        <input type="text" id="login-email" placeholder="Enter your email or phone" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="login-password">Furaha Sirta</label>
-                        <input type="password" id="login-password" placeholder="geli furaha sirta" required>
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" placeholder="Enter your password" required>
                         <button type="button" class="show-password">
                             <i class="fas fa-eye"></i>
                         </button>
@@ -54,74 +54,74 @@
                     
                     <div class="form-options">
                         <label class="checkbox">
-                            <input type="checkbox"> Ii Xasuuso
+                            <input type="checkbox"> Remember Me
                         </label>
-                        <a href="forgot-password.html">Furaha Sirta Ma Illowday?</a>
+                        <a href="forgot-password.html">Forgot Password?</a>
                     </div>
                     
-                    <button type="submit" class="btn btn-large">Gal</button>
+                    <button type="submit" class="btn btn-large">Login</button>
                 </form>
                 
                 <p class="auth-footer">
-                    Ma haysato akoon? <a href="#" class="switch-to-register">Samee akoon cusub</a>
+                    Don't have an account? <a href="#" class="switch-to-register">Create new account</a>
                 </p>
             </div>
             
             <!-- Register Form -->
             <div class="auth-form" id="register-form">
-                <h2>Samee Akoon Cusub</h2>
+                <h2>Create New Account</h2>
                 
                 <form id="registerForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="first-name">Magaca Koowaad</label>
-                            <input type="text" id="first-name" placeholder="Geli magaca koowaad" required>
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" placeholder="Enter first name" required>
                         </div>
                         <div class="form-group">
-                            <label for="last-name">Magaca Dambe</label>
-                            <input type="text" id="last-name" placeholder="Geli magaca dambe" required>
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" placeholder="Enter last name" required>
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="register-email">Email</label>
-                        <input type="email" id="register-email" placeholder="Geli email-kaaga" required>
+                        <input type="email" id="register-email" placeholder="Enter your email" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="phone">Telefoon</label>
+                        <label for="phone">Phone</label>
                         <input type="tel" id="phone" placeholder="+252 61 123 4567" required>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="register-password">Furaha Sirta</label>
-                            <input type="password" id="register-password" placeholder="Samee furaha sirta" required>
+                            <label for="register-password">Password</label>
+                            <input type="password" id="register-password" placeholder="Create password" required>
                         </div>
                         <div class="form-group">
-                            <label for="confirm-password">Ku Celi Furaha Sirta</label>
-                            <input type="password" id="confirm-password" placeholder="Ku celi furaha sirta" required>
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" id="confirm-password" placeholder="Confirm password" required>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="user-type">Nooca Akoonka</label>
+                        <label for="user-type">Account Type</label>
                         <select id="user-type">
-                            <option value="customer">Macmiil</option>
-                            <option value="vendor">Iibiya</option>
+                            <option value="customer">Customer</option>
+                            <option value="vendor">Vendor</option>
                         </select>
                     </div>
                     
                     <label class="checkbox">
                         <input type="checkbox" required>
-                        Ani waa ogahay <a href="terms.html">Shuruudaha</a> iyo <a href="privacy.html">Qaanuunka Arrinta Sirta</a>
+                        I agree to the <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>
                     </label>
                     
-                    <button type="submit" class="btn btn-large">Diiwaangeli</button>
+                    <button type="submit" class="btn btn-large">Register</button>
                 </form>
                 
                 <p class="auth-footer">
-                    Hore u ma haysato akoon? <a href="#" class="switch-to-login">Halkan ku gal</a>
+                    Already have an account? <a href="#" class="switch-to-login">Login here</a>
                 </p>
             </div>
         </div>
