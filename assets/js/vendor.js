@@ -57,11 +57,11 @@ function renderVendorProducts(products, container) {
         <table class="vendor-products-table">
             <thead>
                 <tr>
-                    <th>Alaab</th>
-                    <th>Qiime</th>
-                    <th>Hadhe</th>
-                    <th>Qiimaynta</th>
-                    <th>Hawlaha</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Rating</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -120,45 +120,45 @@ function showAddProductModal() {
         <div class="modal" id="add-product-modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2>Ku Dar Alaab Cusub</h2>
+                    <h2>Add New Product</h2>
                     <button class="modal-close">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form id="new-product-form">
                         <div class="form-group">
-                            <label>Magaca Alaabta</label>
+                            <label>Product Name</label>
                             <input type="text" id="product-name" required>
                         </div>
                         <div class="form-group">
-                            <label>Sharaxaad</label>
+                            <label>Description</label>
                             <textarea id="product-description" rows="3" required></textarea>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label>Qiime ($)</label>
+                                <label>Price ($)</label>
                                 <input type="number" id="product-price" step="0.01" required>
                             </div>
                             <div class="form-group">
-                                <label>Hadhe</label>
+                                <label>Stock</label>
                                 <input type="number" id="product-stock" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Nooca</label>
+                            <label>Category</label>
                             <select id="product-category">
-                                <option value="food">Cuntada</option>
-                                <option value="clothing">Dharka</option>
-                                <option value="electronics">Tiknooloji</option>
+                                <option value="food">Food</option>
+                                <option value="clothing">Clothing</option>
+                                <option value="electronics">Electronics</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>URL Sawirka</label>
+                            <label>Image URL</label>
                             <input type="url" id="product-image" 
                                    value="https://via.placeholder.com/300x200">
                         </div>
                         <div class="modal-actions">
-                            <button type="button" class="btn-outline modal-cancel">Jooji</button>
-                            <button type="submit" class="btn">Ku Dar</button>
+                            <button type="button" class="btn-outline modal-cancel">Cancel</button>
+                            <button type="submit" class="btn">Add Product</button>
                         </div>
                     </form>
                 </div>
@@ -207,7 +207,7 @@ function showAddProductModal() {
         // In real app, send to API
         marketplaceData.products.push(newProduct);
         
-        showNotification('Alaabta cusub si guul leh ayaa loo daray');
+        showNotification('New product added successfully');
         modal.remove();
         
         // Refresh products table
@@ -237,11 +237,11 @@ function editProduct(productId) {
         
         // Change modal title
         const modalHeader = document.querySelector('#add-product-modal .modal-header h2');
-        if (modalHeader) modalHeader.textContent = 'Wax ka beddel Alaabta';
+        if (modalHeader) modalHeader.textContent = 'Edit Product';
         
         // Change submit button
         const submitBtn = document.querySelector('#add-product-modal button[type="submit"]');
-        if (submitBtn) submitBtn.textContent = 'Kaydi Beddelka';
+        if (submitBtn) submitBtn.textContent = 'Save Changes';
         
         // Update form submission
         const form = document.getElementById('new-product-form');
@@ -258,7 +258,7 @@ function editProduct(productId) {
             product.category = document.getElementById('product-category').value;
             product.image = document.getElementById('product-image').value;
             
-            showNotification('Alaabta si guul leh ayaa loo cusboonaysiiyay');
+            showNotification('Product updated successfully');
             
             const modal = document.getElementById('add-product-modal');
             if (modal) modal.remove();
@@ -275,11 +275,11 @@ function editProduct(productId) {
 
 // Delete product
 function deleteProduct(productId) {
-    if (confirm('Ma hubtaa inaad tirtid alaabtan?')) {
+    if (confirm('Are you sure you want to delete this product?')) {
         const index = marketplaceData.products.findIndex(p => p.id === productId);
         if (index !== -1) {
             marketplaceData.products.splice(index, 1);
-            showNotification('Alaabta si guul leh ayaa loo tirtiray', 'success');
+            showNotification('Product deleted successfully', 'success');
             
             // Refresh products table
             const productsTable = document.querySelector('.products-table');
@@ -298,9 +298,9 @@ function initVendorOrders() {
     const ordersTable = document.querySelector('.orders-table tbody');
     if (ordersTable) {
         const sampleOrders = [
-            { id: 'ORD001', customer: 'Axmed Cali', date: '20 Oct 2024', total: 25.99, status: 'delivered' },
-            { id: 'ORD002', customer: 'Cali Maxamed', date: '19 Oct 2024', total: 42.50, status: 'processing' },
-            { id: 'ORD003', customer: 'Safia Xasan', date: '18 Oct 2024', total: 15.75, status: 'pending' }
+            { id: 'ORD001', customer: 'Ahmed Ali', date: '20 Oct 2024', total: 25.99, status: 'delivered' },
+            { id: 'ORD002', customer: 'Ali Mohamed', date: '19 Oct 2024', total: 42.50, status: 'processing' },
+            { id: 'ORD003', customer: 'Safia Hassan', date: '18 Oct 2024', total: 15.75, status: 'pending' }
         ];
         
         ordersTable.innerHTML = sampleOrders.map(order => `
@@ -311,9 +311,9 @@ function initVendorOrders() {
                 <td>$${order.total.toFixed(2)}</td>
                 <td>
                     <span class="status ${order.status}">
-                        ${order.status === 'delivered' ? 'La keenay' : 
-                          order.status === 'processing' ? 'Waa la sameeyayaa' : 
-                          'La sugayo'}
+                        ${order.status === 'delivered' ? 'Delivered' : 
+                          order.status === 'processing' ? 'Processing' : 
+                          'Pending'}
                     </span>
                 </td>
             </tr>
@@ -324,7 +324,7 @@ function initVendorOrders() {
 // Update order status
 function updateOrderStatus(orderId, status) {
     // In real app, make API call
-    showNotification('Xaaladda dalabka waa la cusboonaysiiyay');
+    showNotification('Order status updated');
 }
 
 // Vendor analytics
@@ -334,4 +334,4 @@ function loadVendorAnalytics() {
     if (statsGrid) {
         // Update stats with real data
     }
-          }
+    }
