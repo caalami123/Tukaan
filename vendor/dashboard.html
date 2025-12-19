@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboardka Iibiyaha | BazaarSomali</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .dashboard-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background: #2c3e50;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .dashboard-content {
+            flex: 1;
+            padding: 30px;
+            background: #f5f7fa;
+        }
+    </style>
+</head>
+<body>
+    <!-- Vendor Dashboard Header -->
+    <header class="vendor-header">
+        <div class="container">
+            <div class="vendor-brand">
+                <a href="../index.html" class="logo">Bazaar<span>Somali</span></a>
+                <span class="vendor-badge">Dashboardka Iibiyaha</span>
+            </div>
+            <div class="vendor-user">
+                <img src="https://via.placeholder.com/40" alt="User">
+                <span>Dukaan Macaan</span>
+                <a href="../index.html" class="btn-outline">Eeg Suuqa</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="#overview" class="active">
+                    <i class="fas fa-chart-line"></i> Overview
+                </a>
+                <a href="#products">
+                    <i class="fas fa-box"></i> Alaabta
+                </a>
+                <a href="#orders">
+                    <i class="fas fa-shopping-bag"></i> Dalabka
+                </a>
+                <a href="#customers">
+                    <i class="fas fa-users"></i> Macaamiisha
+                </a>
+                <a href="#analytics">
+                    <i class="fas fa-chart-bar"></i> Tirakoobka
+                </a>
+                <a href="#store-settings">
+                    <i class="fas fa-cog"></i> Dejinta Dukaan
+                </a>
+                <a href="#messages">
+                    <i class="fas fa-envelope"></i> Fariimaha
+                </a>
+                <a href="../index.html">
+                    <i class="fas fa-sign-out-alt"></i> Ka Bax
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <!-- Dashboard Overview -->
+            <section id="overview" class="dashboard-section active">
+                <h1>Overview Dashboard</h1>
+                
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #4CAF50;">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>$1,250</h3>
+                            <p>Dakhliga Maanta</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #2196F3;">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>24</h3>
+                            <p>Dalab Cusub</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #FF9800;">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>1,234</h3>
+                            <p>Muuqaalo Maanta</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #9C27B0;">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>4.5</h3>
+                            <p>Qiimaynta</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Orders -->
+                <div class="dashboard-card">
+                    <h2>Dalabka Ugu Dambeeyay</h2>
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>ID Dalab</th>
+                                <th>Macmiil</th>
+                                <th>Taariikh</th>
+                                <th>Wadarta</th>
+                                <th>Xaalada</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD001</td>
+                                <td>Axmed Cali</td>
+                                <td>20 Oct 2024</td>
+                                <td>$25.99</td>
+                                <td><span class="status delivered">La keenay</span></td>
+                            </tr>
+                            <!-- More orders -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Products Management -->
+            <section id="products" class="dashboard-section">
+                <h1>Maamulka Alaabta</h1>
+                <button class="btn" id="add-product">
+                    <i class="fas fa-plus"></i> Ku Dar Alaab Cusub
+                </button>
+                
+                <div class="products-table">
+                    <!-- Products list -->
+                </div>
+            </section>
+            
+            <!-- Other sections similarly -->
+        </main>
+    </div>
+
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/vendor.js"></script>
+</body>
+  </html>
