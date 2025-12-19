@@ -126,7 +126,7 @@ function renderProducts(products, container) {
                 </div>
                 <div class="product-price">$${product.price.toFixed(2)}</div>
                 <button class="btn btn-small add-to-cart" data-id="${product.id}">
-                    <i class="fas fa-shopping-cart"></i> Ku Dar Gaadhiga
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
                 </button>
             </div>
         `;
@@ -142,7 +142,7 @@ function renderProducts(products, container) {
             
             // Show feedback
             const originalText = this.innerHTML;
-            this.innerHTML = '<i class="fas fa-check"></i> La Ku Daray';
+            this.innerHTML = '<i class="fas fa-check"></i> Added';
             this.disabled = true;
             
             setTimeout(() => {
