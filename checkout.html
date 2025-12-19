@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | BazaarSomali</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .checkout-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        
+        .checkout-progress {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .progress-step {
+            display: flex;
+            align-items: center;
+            margin: 0 20px;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .progress-step.active .step-number {
+            background: #3498db;
+            color: white;
+        }
+        
+        .checkout-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+        
+        .checkout-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .payment-method {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-method:hover {
+            border-color: #3498db;
+        }
+        
+        .payment-method.selected {
+            border-color: #3498db;
+            background: #f8fdff;
+        }
+        
+        .payment-method input {
+            margin-right: 15px;
+        }
+        
+        .payment-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #555;
+        }
+        
+        .card-form {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .order-summary {
+            position: sticky;
+            top: 100px;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .summary-total {
+            font-size: 20px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .place-order-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .checkout-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .checkout-progress {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Bazaar<span>Somali</span></a>
+            
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="stores.html"><i class="fas fa-store"></i> Stores</a>
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+                <a href="login.html"><i class="fas fa-user"></i> Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Checkout Content -->
+    <div class="checkout-container">
+        <!-- Progress Steps -->
+        <div class="checkout-progress">
+            <div class="progress-step active">
+                <div class="step-number">1</div>
+                <div class="step-text">Shipping</div>
+            </div>
+            <div class="progress-step">
+                <div class="step-number">2</div>
+                <div class="step-text">Payment</div>
+            </div>
+            <div class="progress-step">
+                <div class="step-number">3</div>
+                <div class="step-text">Confirm</div>
+            </div>
+        </div>
+
+        <div class="checkout-layout">
+            <!-- Left Column: Forms -->
+            <div class="checkout-forms">
+                <!-- Shipping Information -->
+                <div class="checkout-section" id="shipping-section">
+                    <h2 class="section-title">Shipping Information</h2>
+                    
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" id="full-name" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email Address *</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" id="phone" placeholder="+252 61 123 4567" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Address *</label>
+                        <input type="text" id="address" placeholder="Street address" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City *</label>
+                            <input type="text" id="city" placeholder="City" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Zip Code</label>
+                            <input type="text" id="zip" placeholder="Postal code">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Country *</label>
+                        <select id="country" required>
+                            <option value="">Select Country</option>
+                            <option value="Somalia">Somalia</option>
+                            <option value="Kenya">Kenya</option>
+                            <option value="Ethiopia">Ethiopia</option>
+                            <option value="Djibouti">Djibouti</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox">
+                            <input type="checkbox" id="save-address">
+                            Save this address for future orders
+                        </label>
+                    </div>
+                    
+                    <button class="btn" id="continue-to-payment">
+                        Continue to Payment <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Payment Method (Hidden Initially) -->
+                <div class="checkout-section" id="payment-section" style="display: none;">
+                    <h2 class="section-title">Payment Method</h2>
+                    
+                    <div class="payment-methods">
+                        <label class="payment-method" for="card-payment">
+                            <input type="radio" id="card-payment" name="payment" value="card" checked>
+                            <i class="fas fa-credit-card payment-icon"></i>
+                            <div>
+                                <strong>Credit/Debit Card</strong>
+                                <p>Pay with Visa, MasterCard, or American Express</p>
+                            </div>
+                        </label>
+                        
+                        <label class="payment-method" for="paypal-payment">
+                            <input type="radio" id="paypal-payment" name="payment" value="paypal">
+                            <i class="fab fa-paypal payment-icon"></i>
+                            <div>
+                                <strong>PayPal</strong>
+                                <p>Pay with your PayPal account</p>
+                            </div>
+                        </label>
+                        
+                        <label class="payment-method" for="mobile-payment">
+                            <input type="radio" id="mobile-payment" name="payment" value="mobile">
+                            <i class="fas fa-mobile-alt payment-icon"></i>
+                            <div>
+                                <strong>Mobile Payment</strong>
+                                <p>eDahab, Zaad, or other mobile money</p>
+                            </div>
+                        </label>
+                        
+                        <label class="payment-method" for="cod-payment">
+                            <input type="radio" id="cod-payment" name="payment" value="cod">
+                            <i class="fas fa-money-bill-wave payment-icon"></i>
+                            <div>
+                                <strong>Cash on Delivery</strong>
+                                <p>Pay when you receive your order</p>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <!-- Card Payment Form -->
+                    <div class="card-form" id="card-form">
+                        <div class="form-group">
+                            <label>Card Number *</label>
+                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                            <div class="card-icons">
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                                <i class="fab fa-cc-amex"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Expiry Date *</label>
+                                <input type="text" id="expiry-date" placeholder="MM/YY" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label>CVV *</label>
+                                <input type="password" id="cvv" placeholder="123" maxlength="3">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Cardholder Name *</label>
+                            <input type="text" id="card-name" placeholder="Name on card">
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Payment Form -->
+                    <div class="card-form" id="mobile-form" style="display: none;">
+                        <div class="form-group">
+                            <label>Select Mobile Operator *</label>
+                            <select id="mobile-operator">
+                                <option value="">Select Operator</option>
+                                <option value="edahab">eDahab</option>
+                                <option value="zaad">Zaad (Telesom)</option>
+                                <option value="somtel">Somtel Mobile</option>
+                                <option value="hormuud">Hormuud Mobile</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Mobile Number *</label>
+                            <input type="tel" id="mobile-number" placeholder="+252 61 123 4567">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox">
+                            <input type="checkbox" id="save-card">
+                            Save card for future payments
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox">
+                            <input type="checkbox" id="terms" required>
+                            I agree to the <a href="terms.html">Terms & Conditions</a> and authorize the payment
+                        </label>
+                    </div>
+                    
+                    <button class="btn" id="continue-to-review">
+                        Review Order <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Order Review (Hidden Initially) -->
+                <div class="checkout-section" id="review-section" style="display: none;">
+                    <h2 class="section-title">Order Review</h2>
+                    
+                    <div class="shipping-review">
+                        <h3>Shipping to:</h3>
+                        <div id="shipping-details">
+                            <!-- Will be filled by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="payment-review">
+                        <h3>Payment Method:</h3>
+                        <div id="payment-details">
+                            <!-- Will be filled by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="order-items-review">
+                        <h3>Order Items:</h3>
+                        <div id="order-items-list">
+                            <!-- Will be filled by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-large place-order-btn" id="place-order">
+                        <i class="fas fa-lock"></i> Place Order & Pay
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Column: Order Summary -->
+            <div class="order-summary">
+                <div class="checkout-section">
+                    <h2 class="section-title">Order Summary</h2>
+                    
+                    <div id="checkout-items">
+                        <!-- Cart items will be loaded here -->
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Subtotal</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Shipping</span>
+                        <span id="shipping">$2.00</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Tax</span>
+                        <span id="tax">$0.00</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Service Fee</span>
+                        <span id="service-fee">$1.00</span>
+                    </div>
+                    
+                    <div class="summary-item summary-total">
+                        <span>Total</span>
+                        <span id="total">$0.00</span>
+                    </div>
+                    
+                    <div class="coupon-section">
+                        <div class="form-group">
+                            <label>Discount Code</label>
+                            <div class="coupon-input">
+                                <input type="text" id="coupon-code" placeholder="Enter code">
+                                <button class="btn-small" id="apply-coupon">Apply</button>
+                            </div>
+                            <div id="coupon-message"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="secure-payment">
+                        <p><i class="fas fa-shield-alt"></i> Secure Payment</p>
+                        <p><i class="fas fa-lock"></i> Your payment information is encrypted</p>
+                        <div class="trust-badges">
+                            <i class="fas fa-check-circle"></i> SSL Secure
+                            <i class="fas fa-check-circle"></i> PCI Compliant
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="checkout-section">
+                    <h3><i class="fas fa-shipping-fast"></i> Delivery Information</h3>
+                    <p>Estimated delivery: 2-4 business days</p>
+                    <p>Free shipping on orders over $50</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BazaarSomali</h3>
+                    <p>Premier marketplace for Somali products</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> info@bazaarsomali.com</p>
+                    <p><i class="fas fa-phone"></i> +252 61 123 4567</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <p><a href="faq.html">FAQ</a></p>
+                    <p><a href="contact.html">Contact Us</a></p>
+                    <p><a href="returns.html">Returns Policy</a></p>
+                </div>
+            </div>
+            <p class="copyright">© 2024 BazaarSomali. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Order Successful!</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Thank You for Your Order!</h3>
+                <p>Your order has been placed successfully.</p>
+                <p><strong>Order ID:</strong> <span id="order-id">#ORD001234</span></p>
+                <p>You will receive a confirmation email shortly.</p>
+                
+                <div class="modal-actions">
+                    <a href="index.html" class="btn">Continue Shopping</a>
+                    <a href="orders.html" class="btn-outline">View Order Details</a>
+                </div>
+            </div>
+          </div>
+    </div>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/checkout.js"></script>
+</body>
+</html>
