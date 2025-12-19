@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboardka Maamulaha | BazaarSomali</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Admin Dashboard -->
+    <div class="admin-container">
+        <!-- Admin Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-brand">
+                <h2><i class="fas fa-shield-alt"></i> Admin Panel</h2>
+            </div>
+            
+            <nav class="admin-nav">
+                <div class="nav-section">
+                    <h4>Overview</h4>
+                    <a href="#admin-overview"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                </div>
+                
+                <div class="nav-section">
+                    <h4>Users</h4>
+                    <a href="#users"><i class="fas fa-users"></i> Isticmaalayaasha</a>
+                    <a href="#vendors"><i class="fas fa-store"></i> Iibiyayaasha</a>
+                </div>
+                
+                <div class="nav-section">
+                    <h4>Content</h4>
+                    <a href="#products-admin"><i class="fas fa-box"></i> Alaabta</a>
+                    <a href="#orders-admin"><i class="fas fa-shopping-bag"></i> Dalabka</a>
+                    <a href="#categories"><i class="fas fa-tags"></i> Noocyada</a>
+                </div>
+                
+                <div class="nav-section">
+                    <h4>Settings</h4>
+                    <a href="#site-settings"><i class="fas fa-cog"></i> Dejinta Website</a>
+                    <a href="#payment-settings"><i class="fas fa-credit-card"></i> Habka Bixinta</a>
+                </div>
+                
+                <div class="nav-section">
+                    <a href="../index.html" class="logout">
+                        <i class="fas fa-sign-out-alt"></i> Ka Bax Dashboard
+                    </a>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Admin Main Content -->
+        <main class="admin-content">
+            <!-- Admin Header -->
+            <header class="admin-header">
+                <div class="admin-search">
+                    <input type="text" placeholder="Raadi...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="admin-user">
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <img src="https://via.placeholder.com/40" alt="Admin">
+                        <span>Maamulaha</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Admin Overview -->
+            <section id="admin-overview" class="admin-section active">
+                <h1>Dashboardka Maamulaha</h1>
+                
+                <!-- Admin Stats -->
+                <div class="admin-stats">
+                    <div class="admin-stat-card">
+                        <h3>1,234</h3>
+                        <p>Isticmaalayaasha</p>
+                        <div class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 12%
+                        </div>
+                    </div>
+                    
+                    <div class="admin-stat-card">
+                        <h3>56</h3>
+                        <p>Iibiyayaasha</p>
+                        <div class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 5%
+                        </div>
+                    </div>
+                    
+                    <div class="admin-stat-card">
+                        <h3>$12,456</h3>
+                        <p>Dakhliga</p>
+                        <div class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 18%
+                        </div>
+                    </div>
+                    
+                    <div class="admin-stat-card">
+                        <h3>345</h3>
+                        <p>Dalabka Maanta</p>
+                        <div class="stat-change negative">
+                            <i class="fas fa-arrow-down"></i> 2%
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Activity -->
+                <div class="admin-card">
+                    <h2>Hawlaha Ugu Dambeeyay</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>Axmed Cali ayaa diiwaangashay</p>
+                                <span class="activity-time">10 daqiiqo kahor</span>
+                            </div>
+                        </div>
+                        <!-- More activities -->
+                    </div>
+                </div>
+                
+                <!-- Pending Actions -->
+                <div class="admin-card">
+                    <h2>Ficillooyin La Sugayo</h2>
+                    <div class="pending-actions">
+                        <div class="pending-item">
+                            <h4>3 Dukaan oo cusub</h4>
+                            <p>Waa la aqbali doonaa</p>
+                            <div class="pending-buttons">
+                                <button class="btn-small">Aqbal</button>
+                                <button class="btn-small btn-outline">Diid</button>
+                            </div>
+                        </div>
+                        <!-- More pending items -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/vendor.js"></script>
+</body>
+  </html>
