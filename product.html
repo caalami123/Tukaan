@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canjeero | Dukaan Macaan</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar">
+        <!-- Same navigation as index.html -->
+    </nav>
+
+    <!-- Product Details -->
+    <section class="product-details">
+        <div class="container">
+            <div class="product-layout">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="https://via.placeholder.com/500" alt="Canjeero" id="main-product-img">
+                    </div>
+                    <div class="image-thumbnails">
+                        <img src="https://via.placeholder.com/100" class="active">
+                        <img src="https://via.placeholder.com/100">
+                        <img src="https://via.placeholder.com/100">
+                    </div>
+                </div>
+                
+                <!-- Product Info -->
+                <div class="product-info">
+                    <nav class="breadcrumb">
+                        <a href="index.html">Guriga</a> > 
+                        <a href="stores.html">Dukaamada</a> > 
+                        <a href="store.html">Dukaan Macaan</a> > 
+                        <span>Canjeero</span>
+                    </nav>
+                    
+                    <h1 id="product-title">Canjeero Somaliyeed</h1>
+                    
+                    <div class="product-rating">
+                        <div class="stars">★★★★☆</div>
+                        <span class="rating-count">(24 reviews)</span>
+                        <span class="product-id">ID: #PRD001</span>
+                    </div>
+                    
+                    <p class="product-description">Canjeero Somaliyeed oo asaliga ah, la sameeyay cuntooyin macaan oo dhadhan fiican leh. Qof kasta wuu ku dhuxulaysaa.</p>
+                    
+                    <div class="product-price">
+                        <span class="current-price">$5.99</span>
+                        <span class="original-price">$7.99</span>
+                        <span class="discount">-25%</span>
+                    </div>
+                    
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-box"></i>
+                            <span>10 hadhee ayaa hadhay</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>La keeni karo 2-3 maalmood</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-store"></i>
+                            <span><a href="store.html">Dukaan Macaan</a></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Options -->
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label>Qaddar:</label>
+                            <select id="quantity">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="product-actions">
+                        <button class="btn btn-large" id="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Ku Dar Gaadhiga
+                        </button>
+                        <button class="btn-outline" id="add-to-wishlist">
+                            <i class="fas fa-heart"></i> Ku Dar Listiga
+                        </button>
+                    </div>
+                    
+                    <!-- Share Product -->
+                    <div class="product-share">
+                        <span>Wadaag:</span>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Tabs -->
+    <section class="product-tabs">
+        <div class="container">
+            <div class="tabs-header">
+                <button class="tab-btn active" data-tab="description">Sharaxaad</button>
+                <button class="tab-btn" data-tab="reviews">Faallooyinka (24)</button>
+                <button class="tab-btn" data-tab="shipping">Raridda</button>
+            </div>
+            
+            <div class="tab-content active" id="description">
+                <h3>Waxyaabaha La Sameeyay</h3>
+                <ul>
+                    <li>Bur Somaliyeed oo asaliga ah</li>
+                    <li>Sonkorta dabiiciga ah</li>
+                    <li>Maalqabeen macaan</li>
+                    <li>Daahir dhadhan leh</li>
+                </ul>
+            </div>
+            
+            <div class="tab-content" id="reviews">
+                <!-- Reviews content -->
+            </div>
+            
+            <div class="tab-content" id="shipping">
+                <!-- Shipping info -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products">
+        <div class="container">
+            <h2>Alaabta La Xiriira</h2>
+            <div class="products-grid" id="related-products">
+                <!-- Related products loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+                      </html>
