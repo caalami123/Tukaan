@@ -1,10 +1,92 @@
-<h2>All Stores</h2>
-<ul id="storeList"></ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dukaamada | Somali Marketplace</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar">
+        <!-- Same navigation as index.html -->
+    </nav>
 
-<script src="assets/js/data.js"></script>
-<script>
-const ul = document.getElementById("storeList");
-stores.forEach(s => {
-  ul.innerHTML += `<li><a href="store.html?id=${s.id}">${s.name}</a></li>`;
-});
-</script>
+    <!-- Stores Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Dukaamada</h1>
+            <p>Ka dooro dukaamada aad jeceshahay</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-group">
+                <select id="category-filter">
+                    <option value="">Dhamaan Noocyada</option>
+                    <option value="food">Cuntada</option>
+                    <option value="clothing">Dharka</option>
+                    <option value="electronics">Tiknooloji</option>
+                </select>
+                
+                <select id="location-filter">
+                    <option value="">Dhamaan Goobaha</option>
+                    <option value="mogadishu">Muqdisho</option>
+                    <option value="hargeisa">Hargeysa</option>
+                    <option value="kismayo">Kismaayo</option>
+                </select>
+                
+                <select id="rating-filter">
+                    <option value="">Dhamaan Qiimaynta</option>
+                    <option value="5">5 Xiddigo</option>
+                    <option value="4">4+ Xiddigo</option>
+                    <option value="3">3+ Xiddigo</option>
+                </select>
+                
+                <button id="apply-filters" class="btn">Cabi</button>
+                <button id="reset-filters" class="btn-outline">Dib u dejiso</button>
+            </div>
+            
+            <div class="search-store">
+                <input type="text" id="store-search" placeholder="Raadi dukaan...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stores Grid -->
+    <section class="stores-list">
+        <div class="container">
+            <div class="stores-grid" id="stores-container">
+                <!-- Stores loaded by JavaScript -->
+            </div>
+            
+            <div class="pagination">
+                <button class="page-btn">← Hore</button>
+                <span class="page-numbers">1 / 5</span>
+                <button class="page-btn">Xiga →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Become a Vendor -->
+    <section class="become-vendor">
+        <div class="container">
+            <h2>Ma Doonaysaa Inaad Noqotid Iibiya?</h2>
+            <p>Ku biir dukaamadeena oo ku iibso alaabtaada</p>
+            <a href="vendor/dashboard.html?action=register" class="btn">Bilow Dukaan</a>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/stores.js"></script>
+</body>
+</html>
