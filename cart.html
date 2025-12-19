@@ -1,13 +1,116 @@
-<h2>Your Cart</h2>
-<ul id="cartItems"></ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaadhiga | Somali Marketplace</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar">
+        <!-- Same navigation as index.html -->
+    </nav>
 
-<script>
-const cart = JSON.parse(localStorage.getItem("cart")) || [];
-const products = JSON.parse(localStorage.getItem("products"));
-const ul = document.getElementById("cartItems");
+    <!-- Cart Header -->
+    <section class="cart-header">
+        <div class="container">
+            <h1>Gaadhiga</h1>
+            <p>Dhamaystir dalabkaaga</p>
+        </div>
+    </section>
 
-cart.forEach(id => {
-  const p = products.find(x => x.id === id);
-  ul.innerHTML += `<li>${p.name} - $${p.price}</li>`;
-});
-</script>
+    <!-- Cart Content -->
+    <section class="cart-content">
+        <div class="container">
+            <div class="cart-layout">
+                <!-- Cart Items -->
+                <div class="cart-items">
+                    <div class="cart-item">
+                        <div class="item-image">
+                            <img src="https://via.placeholder.com/100" alt="Canjeero">
+                        </div>
+                        <div class="item-details">
+                            <h3><a href="product.html">Canjeero Somaliyeed</a></h3>
+                            <p class="item-store">Dukaan Macaan</p>
+                            <div class="item-price">$5.99</div>
+                        </div>
+                        <div class="item-quantity">
+                            <button class="qty-btn">-</button>
+                            <input type="number" value="2" min="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                        <div class="item-total">$11.98</div>
+                        <button class="item-remove"><i class="fas fa-trash"></i></button>
+                    </div>
+                    
+                    <!-- More cart items -->
+                </div>
+                
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <h3>Wada Koobka</h3>
+                    <div class="summary-row">
+                        <span>Qiimaha Alaabta:</span>
+                        <span>$11.98</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Raridda:</span>
+                        <span>$2.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Kharashka Adeegga:</span>
+                        <span>$1.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Wadarta:</span>
+                        <span>$14.98</span>
+                    </div>
+                    
+                    <a href="checkout.html" class="btn btn-large">U Soco Bixinta</a>
+                    
+                    <div class="continue-shopping">
+                        <a href="stores.html"><i class="fas fa-arrow-left"></i> Sii wad Iibka</a>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <p><i class="fas fa-lock"></i> Bixintaada way amaan tahay</p>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Empty Cart State (hidden by default) -->
+            <div class="empty-cart" id="empty-cart" style="display:none;">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Gaadhigaadu waa madhan yahay</h3>
+                <p>Ku dar alaab cusub si aad u bilowdo</p>
+                <a href="stores.html" class="btn">Raadi Alaab</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommended Products -->
+    <section class="recommended-cart">
+        <div class="container">
+            <h2>Waxaa Lagu Darsan Karaa</h2>
+            <div class="products-grid" id="cart-recommendations">
+                <!-- Recommended products loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/cart.js"></script>
+</body>
+</html>
