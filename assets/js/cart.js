@@ -209,3 +209,31 @@ function clearCart() {
     updateCartCount();
     loadCartItems();
             }
+// Add this function to cart.js if not already present
+function initCheckoutButton() {
+    const checkoutBtn = document.querySelector('.btn[href="checkout.html"]');
+    
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', function(e) {
+            const cart = JSON.parse(localStorage.getItem('marketplaceCart')) || [];
+            
+            if (cart.length === 0) {
+                e.preventDefault();
+                alert('Your cart is empty. Add items to proceed to checkout.');
+                return;
+            }
+            
+            // Save cart for checkout
+            localStorage.setItem('checkoutCart', JSON.stringify(cart));
+            
+            // Proceed to checkout
+            window.location.href = 'checkout.html';
+        });
+    }
+}
+
+// Also add this to your DOMContentLoaded event in cart.js
+document.addEventListener('DOMContentLoaded', function() {
+    // ... existing code ...
+    initCheckoutButton(); // Add this line
+});
