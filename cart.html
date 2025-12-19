@@ -1,0 +1,13 @@
+<h2>Your Cart</h2>
+<ul id="cartItems"></ul>
+
+<script>
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+const products = JSON.parse(localStorage.getItem("products"));
+const ul = document.getElementById("cartItems");
+
+cart.forEach(id => {
+  const p = products.find(x => x.id === id);
+  ul.innerHTML += `<li>${p.name} - $${p.price}</li>`;
+});
+</script>
