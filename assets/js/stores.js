@@ -120,8 +120,8 @@ function renderStores(stores) {
         storesContainer.innerHTML = `
             <div class="no-results">
                 <i class="fas fa-store-slash"></i>
-                <h3>Dukaan lama helin</h3>
-                <p>Iskuday doorasho kale ama raadinta</p>
+                <h3>No stores found</h3>
+                <p>Try different filters or search</p>
             </div>
         `;
         return;
@@ -144,14 +144,14 @@ function renderStores(stores) {
                         <i class="fas fa-star"></i> ${store.rating.toFixed(1)}
                     </span>
                     <span class="store-products">
-                        <i class="fas fa-box"></i> ${store.productsCount} alaab
+                        <i class="fas fa-box"></i> ${store.productsCount} products
                     </span>
                 </div>
                 
                 <div class="store-actions">
-                    <a href="store.html?id=${store.id}" class="btn btn-small">Arag Dukaan</a>
+                    <a href="store.html?id=${store.id}" class="btn btn-small">View Store</a>
                     <button class="btn-outline btn-small follow-store" data-store-id="${store.id}">
-                        <i class="fas fa-heart"></i> Raac
+                        <i class="fas fa-heart"></i> Follow
                     </button>
                 </div>
             </div>
@@ -179,12 +179,12 @@ function toggleFollowStore(storeId, button) {
     
     if (isFollowing) {
         icon.className = 'far fa-heart';
-        button.innerHTML = '<i class="far fa-heart"></i> Raac';
-        showNotification(`Ka baxay ${store.name}`);
+        button.innerHTML = '<i class="far fa-heart"></i> Follow';
+        showNotification(`Unfollowed ${store.name}`);
     } else {
         icon.className = 'fas fa-heart';
-        button.innerHTML = '<i class="fas fa-heart"></i> La Raacay';
-        showNotification(`Raacay ${store.name}`);
+        button.innerHTML = '<i class="fas fa-heart"></i> Following';
+        showNotification(`Following ${store.name}`);
     }
 }
 
@@ -208,11 +208,11 @@ function initStorePagination(stores, itemsPerPage = 12) {
         
         paginationContainer.innerHTML = `
             <button class="page-btn prev-btn" ${currentPage === 1 ? 'disabled' : ''}>
-                ← Hore
+                ← Previous
             </button>
-            <span class="page-numbers">Bogga ${currentPage} / ${totalPages}</span>
+            <span class="page-numbers">Page ${currentPage} / ${totalPages}</span>
             <button class="page-btn next-btn" ${currentPage === totalPages ? 'disabled' : ''}>
-                Xiga →
+                Next →
             </button>
         `;
         
