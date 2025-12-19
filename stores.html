@@ -1,0 +1,10 @@
+<h2>All Stores</h2>
+<ul id="storeList"></ul>
+
+<script src="assets/js/data.js"></script>
+<script>
+const ul = document.getElementById("storeList");
+stores.forEach(s => {
+  ul.innerHTML += `<li><a href="store.html?id=${s.id}">${s.name}</a></li>`;
+});
+</script>
