@@ -30,7 +30,7 @@ function loadCartItems() {
                 </div>
                 <div class="item-details">
                     <h3><a href="product.html?id=${item.product.id}">${item.product.name}</a></h3>
-                    <p class="item-store">Dukaan Macaan</p>
+                    <p class="item-store">Sweet Shop</p>
                     <div class="item-price">${formatPrice(item.product.price)}</div>
                 </div>
                 <div class="item-quantity">
@@ -88,10 +88,10 @@ function initCartControls() {
                           e.target : e.target.closest('.item-remove');
             const productId = parseInt(button.getAttribute('data-product-id'));
             
-            if (confirm('Ma hubtaa inaad ka saarayso alaabtan gaadhiga?')) {
+            if (confirm('Are you sure you want to remove this item from cart?')) {
                 removeFromCart(productId);
                 loadCartItems();
-                showNotification('Alaabta waxaa laga saaray gaadhiga', 'success');
+                showNotification('Item removed from cart', 'success');
             }
         }
     });
@@ -155,7 +155,7 @@ function initCheckoutButton() {
         checkoutBtn.addEventListener('click', function(e) {
             if (marketplaceData.cart.length === 0) {
                 e.preventDefault();
-                alert('Ku dar alaab gaadhiga marka hore');
+                alert('Add items to cart first');
                 return;
             }
             
@@ -166,7 +166,7 @@ function initCheckoutButton() {
             // For demo, just show message
             if (!document.querySelector('a[href="checkout.html"]')) {
                 e.preventDefault();
-                showNotification('Waxaad u socotaa bogga bixinta...', 'info');
+                showNotification('Proceeding to checkout...', 'info');
                 setTimeout(() => {
                     window.location.href = 'index.html';
                 }, 2000);
