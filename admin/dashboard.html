@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboardka Maamulaha | BazaarSomali</title>
+    <title>Admin Dashboard | BazaarSomali</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -24,26 +24,26 @@
                 
                 <div class="nav-section">
                     <h4>Users</h4>
-                    <a href="#users"><i class="fas fa-users"></i> Isticmaalayaasha</a>
-                    <a href="#vendors"><i class="fas fa-store"></i> Iibiyayaasha</a>
+                    <a href="#users"><i class="fas fa-users"></i> Users</a>
+                    <a href="#vendors"><i class="fas fa-store"></i> Vendors</a>
                 </div>
                 
                 <div class="nav-section">
                     <h4>Content</h4>
-                    <a href="#products-admin"><i class="fas fa-box"></i> Alaabta</a>
-                    <a href="#orders-admin"><i class="fas fa-shopping-bag"></i> Dalabka</a>
-                    <a href="#categories"><i class="fas fa-tags"></i> Noocyada</a>
+                    <a href="#products-admin"><i class="fas fa-box"></i> Products</a>
+                    <a href="#orders-admin"><i class="fas fa-shopping-bag"></i> Orders</a>
+                    <a href="#categories"><i class="fas fa-tags"></i> Categories</a>
                 </div>
                 
                 <div class="nav-section">
                     <h4>Settings</h4>
-                    <a href="#site-settings"><i class="fas fa-cog"></i> Dejinta Website</a>
-                    <a href="#payment-settings"><i class="fas fa-credit-card"></i> Habka Bixinta</a>
+                    <a href="#site-settings"><i class="fas fa-cog"></i> Website Settings</a>
+                    <a href="#payment-settings"><i class="fas fa-credit-card"></i> Payment Settings</a>
                 </div>
                 
                 <div class="nav-section">
                     <a href="../index.html" class="logout">
-                        <i class="fas fa-sign-out-alt"></i> Ka Bax Dashboard
+                        <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
                 </div>
             </nav>
@@ -54,7 +54,7 @@
             <!-- Admin Header -->
             <header class="admin-header">
                 <div class="admin-search">
-                    <input type="text" placeholder="Raadi...">
+                    <input type="text" placeholder="Search...">
                     <button><i class="fas fa-search"></i></button>
                 </div>
                 
@@ -65,7 +65,7 @@
                     </div>
                     <div class="user-dropdown">
                         <img src="https://via.placeholder.com/40" alt="Admin">
-                        <span>Maamulaha</span>
+                        <span>Admin</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                 </div>
@@ -73,13 +73,13 @@
             
             <!-- Admin Overview -->
             <section id="admin-overview" class="admin-section active">
-                <h1>Dashboardka Maamulaha</h1>
+                <h1>Admin Dashboard</h1>
                 
                 <!-- Admin Stats -->
                 <div class="admin-stats">
                     <div class="admin-stat-card">
                         <h3>1,234</h3>
-                        <p>Isticmaalayaasha</p>
+                        <p>Users</p>
                         <div class="stat-change positive">
                             <i class="fas fa-arrow-up"></i> 12%
                         </div>
@@ -87,7 +87,7 @@
                     
                     <div class="admin-stat-card">
                         <h3>56</h3>
-                        <p>Iibiyayaasha</p>
+                        <p>Vendors</p>
                         <div class="stat-change positive">
                             <i class="fas fa-arrow-up"></i> 5%
                         </div>
@@ -95,7 +95,7 @@
                     
                     <div class="admin-stat-card">
                         <h3>$12,456</h3>
-                        <p>Dakhliga</p>
+                        <p>Revenue</p>
                         <div class="stat-change positive">
                             <i class="fas fa-arrow-up"></i> 18%
                         </div>
@@ -103,7 +103,7 @@
                     
                     <div class="admin-stat-card">
                         <h3>345</h3>
-                        <p>Dalabka Maanta</p>
+                        <p>Today's Orders</p>
                         <div class="stat-change negative">
                             <i class="fas fa-arrow-down"></i> 2%
                         </div>
@@ -112,15 +112,15 @@
                 
                 <!-- Recent Activity -->
                 <div class="admin-card">
-                    <h2>Hawlaha Ugu Dambeeyay</h2>
+                    <h2>Recent Activity</h2>
                     <div class="activity-list">
                         <div class="activity-item">
                             <div class="activity-icon">
                                 <i class="fas fa-user-plus"></i>
                             </div>
                             <div class="activity-content">
-                                <p>Axmed Cali ayaa diiwaangashay</p>
-                                <span class="activity-time">10 daqiiqo kahor</span>
+                                <p>Ahmed Ali registered</p>
+                                <span class="activity-time">10 minutes ago</span>
                             </div>
                         </div>
                         <!-- More activities -->
@@ -129,14 +129,14 @@
                 
                 <!-- Pending Actions -->
                 <div class="admin-card">
-                    <h2>Ficillooyin La Sugayo</h2>
+                    <h2>Pending Actions</h2>
                     <div class="pending-actions">
                         <div class="pending-item">
-                            <h4>3 Dukaan oo cusub</h4>
-                            <p>Waa la aqbali doonaa</p>
+                            <h4>3 New Stores</h4>
+                            <p>Need approval</p>
                             <div class="pending-buttons">
-                                <button class="btn-small">Aqbal</button>
-                                <button class="btn-small btn-outline">Diid</button>
+                                <button class="btn-small">Approve</button>
+                                <button class="btn-small btn-outline">Reject</button>
                             </div>
                         </div>
                         <!-- More pending items -->
@@ -149,4 +149,4 @@
     <script src="../assets/js/data.js"></script>
     <script src="../assets/js/vendor.js"></script>
 </body>
-  </html>
+</html>
