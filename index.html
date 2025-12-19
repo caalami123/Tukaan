@@ -1,30 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Global Marketplace</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somali Marketplace | Home</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Bazaar<span>Somali</span></a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Raadi alaab, dukaan, ama nooc...">
+                <select>
+                    <option>All</option>
+                    <option>clothes</option>
+                    <option>furniture</option>
+                    <option>foods</option>
+                </select>
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Guriga</a>
+                <a href="stores.html"><i class="fas fa-store"></i> Dukaamada</a>
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i> Gaadhiga</a>
+                <a href="login.html"><i class="fas fa-user"></i> Gal</a>
+                <a href="vendor/dashboard.html" class="vendor-btn">Iibiyaha</a>
+            </div>
+            
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
-<header class="topbar">
-  <h1>🛒 Global Marketplace</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="stores.html">Stores</a>
-    <a href="cart.html">Cart</a>
-    <a href="login.html">Login</a>
-  </nav>
-</header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hel Alaabta Aad U Baahanayso</h1>
+                <p>Ka hel dukaamada ugu sarreeya Somaliyeed oo iibiya alaab tayo sare leh</p>
+                <a href="stores.html" class="btn">Bilow Iibka</a>
+            </div>
+        </div>
+    </section>
 
-<section class="hero">
-  <h2>Ku soo dhowow Marketplace Wayn</h2>
-  <p>Tukaamo kala duwan • Hal meel</p>
-</section>
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2>Noocyada Alaabta</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Dharka</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Cuntada</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Tiknooloji</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Qalabka Guriga</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Jirrada</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-car"></i>
+                    <h3>Gaadiidka</h3>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<main class="grid" id="productList"></main>
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2>Alaabta Laga Doorbiday</h2>
+            <div class="products-grid" id="featured-products">
+                <!-- Products loaded by JavaScript -->
+            </div>
+            <a href="stores.html" class="btn-outline">Arag Dhammaan Alaabta</a>
+        </div>
+    </section>
 
-<script src="assets/js/data.js"></script>
-<script src="assets/js/app.js"></script>
+    <!-- Featured Stores -->
+    <section class="featured-stores">
+        <div class="container">
+            <h2>Dukaamada Laga Doorbiday</h2>
+            <div class="stores-grid">
+                <div class="store-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Store">
+                    <h3>Dukaan Macaan</h3>
+                    <p>Cuntada Somaliyeed ee asaliga ah</p>
+                    <a href="store.html?id=1" class="btn-small">Arag Dukaan</a>
+                </div>
+                <!-- More stores -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BazaarSomali</h3>
+                    <p>Marketplace ugu sarreeya ee alaabta Somaliyeed</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Xiriir</h4>
+                    <p><i class="fas fa-envelope"></i> info@bazaarsomali.com</p>
+                    <p><i class="fas fa-phone"></i> +252 61 123 4567</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Socdaal</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">© 2024 BazaarSomali. Dhamaan xuquuqaha way dhifiyeen.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
