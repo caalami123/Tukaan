@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dukaan Macaan | Somali Marketplace</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar">
+        <!-- Same navigation as index.html -->
+    </nav>
+
+    <!-- Store Header -->
+    <section class="store-header">
+        <div class="container">
+            <div class="store-info">
+                <div class="store-avatar">
+                    <img src="https://via.placeholder.com/150" alt="Dukaan Macaan">
+                </div>
+                <div class="store-details">
+                    <h1 id="store-name">Dukaan Macaan</h1>
+                    <div class="store-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-text">(45 reviews)</span>
+                    </div>
+                    <p class="store-description">Cuntada Somaliyeed ee asaliga ah, waxaan ku iibinaynaa canjeero, sabaayad, hilib, iyo cuntooyin kale oo badan.</p>
+                    <div class="store-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Muqdisho, Somalia</span>
+                        <span><i class="fas fa-clock"></i> 8:00 AM - 10:00 PM</span>
+                        <span><i class="fas fa-phone"></i> +252 61 789 0123</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="store-actions">
+                <button class="btn"><i class="fas fa-heart"></i> Jeclow</button>
+                <button class="btn-outline"><i class="fas fa-share-alt"></i> Wadaag</button>
+                <button class="btn" id="contact-store"><i class="fas fa-envelope"></i> La Xiriir</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Navigation -->
+    <nav class="store-nav">
+        <div class="container">
+            <a href="#products" class="active">Alaabta</a>
+            <a href="#reviews">Faallooyinka</a>
+            <a href="#about">Ku Saabsan</a>
+            <a href="#contact">Xiriirka</a>
+        </div>
+    </nav>
+
+    <!-- Store Products -->
+    <section class="store-products" id="products">
+        <div class="container">
+            <h2>Alaabta Dukaanka</h2>
+            <div class="products-grid" id="store-products">
+                <!-- Store products loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="store-reviews" id="reviews">
+        <div class="container">
+            <h2>Faallooyinka Macaamiisha</h2>
+            <div class="reviews-container">
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="https://via.placeholder.com/50" alt="User">
+                        <div>
+                            <h4>Axmed Cali</h4>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>Cuntada aad u macaan! Canjeerada way fiicnaayeen.</p>
+                    <span class="review-date">2 maalmood kahor</span>
+                </div>
+                <!-- More reviews -->
+            </div>
+            
+            <div class="add-review">
+                <h3>Faallo ka dhiibo</h3>
+                <textarea placeholder="Faalladaada halkan qor..."></textarea>
+                <div class="rating-input">
+                    <span>Qiimee:</span>
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <button class="btn">Dir Faallo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
