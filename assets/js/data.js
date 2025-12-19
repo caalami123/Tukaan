@@ -4,8 +4,8 @@ const marketplaceData = {
     products: [
         {
             id: 1,
-            name: "Canjeero Somaliyeed",
-            description: "Canjeero Somaliyeed oo asaliga ah",
+            name: "Somali Canjeero",
+            description: "Authentic Somali canjeero",
             price: 5.99,
             originalPrice: 7.99,
             image: "https://via.placeholder.com/300x200",
@@ -18,7 +18,7 @@ const marketplaceData = {
         {
             id: 2,
             name: "Macawiis",
-            description: "Macawiis cas ah oo cajiib ah",
+            description: "Traditional Somali clothing",
             price: 12.99,
             image: "https://via.placeholder.com/300x200",
             category: "clothing",
@@ -29,8 +29,8 @@ const marketplaceData = {
         },
         {
             id: 3,
-            name: "Gambaro",
-            description: "Gambaro casri ah oo smartphone ah",
+            name: "Smartphone",
+            description: "Latest model smartphone",
             price: 299.99,
             image: "https://via.placeholder.com/300x200",
             category: "electronics",
@@ -45,9 +45,9 @@ const marketplaceData = {
     stores: [
         {
             id: 1,
-            name: "Dukaan Macaan",
-            description: "Cuntada Somaliyeed ee asaliga ah",
-            location: "Muqdisho",
+            name: "Sweet Shop",
+            description: "Authentic Somali food products",
+            location: "Mogadishu",
             rating: 4.7,
             productsCount: 15,
             category: "food",
@@ -56,8 +56,8 @@ const marketplaceData = {
         {
             id: 2,
             name: "Bazaar Clothing",
-            description: "Dharka Somaliyeed ee ugu fiican",
-            location: "Hargeysa",
+            description: "Best Somali traditional clothing",
+            location: "Hargeisa",
             rating: 4.5,
             productsCount: 42,
             category: "clothing",
@@ -66,8 +66,8 @@ const marketplaceData = {
         {
             id: 3,
             name: "Somali Tech",
-            description: "Qalabka elektarooniga ah",
-            location: "Kismaayo",
+            description: "Electronic goods and gadgets",
+            location: "Kismayo",
             rating: 4.9,
             productsCount: 28,
             category: "electronics",
@@ -77,12 +77,12 @@ const marketplaceData = {
     
     // Categories data
     categories: [
-        { id: 1, name: "Dharka", icon: "fa-tshirt", count: 156 },
-        { id: 2, name: "Cuntada", icon: "fa-utensils", count: 89 },
-        { id: 3, name: "Tiknooloji", icon: "fa-laptop", count: 72 },
-        { id: 4, name: "Qalabka Guriga", icon: "fa-home", count: 103 },
-        { id: 5, name: "Jirrada", icon: "fa-heart", count: 64 },
-        { id: 6, name: "Gaadiidka", icon: "fa-car", count: 31 }
+        { id: 1, name: "Clothing", icon: "fa-tshirt", count: 156 },
+        { id: 2, name: "Food", icon: "fa-utensils", count: 89 },
+        { id: 3, name: "Technology", icon: "fa-laptop", count: 72 },
+        { id: 4, name: "Home Goods", icon: "fa-home", count: 103 },
+        { id: 5, name: "Health", icon: "fa-heart", count: 64 },
+        { id: 6, name: "Vehicles", icon: "fa-car", count: 31 }
     ],
     
     // Cart data
@@ -92,6 +92,7 @@ const marketplaceData = {
     currentUser: null
 };
 
+// Functions remain the same, only comments and messages need translation
 // Initialize cart from localStorage
 function initializeCart() {
     const savedCart = localStorage.getItem('marketplaceCart');
